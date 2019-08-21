@@ -17,7 +17,9 @@ const Layout = ({ children }) => (
     <Content>
       <main>{children}</main>
       <Footer>
-        Con ♥️ por
+        <span role="img" aria-label="emoji">
+          Con ❤️️ por
+        </span>
         <a href="https://www.platzi.com">Platzi</a>
       </Footer>
     </Content>
