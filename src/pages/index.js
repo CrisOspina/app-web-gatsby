@@ -1,16 +1,49 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { SEO, Jumbo } from '../components'
+import { graphql } from 'gatsby'
+import { SEO, Jumbo, ProductsPlatzi } from '../components'
 
-const IndexPage = () => (
-  <>
-    <SEO title="Home" />
-    <Jumbo />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/gracias/">Go to thanks</Link>
-  </>
-)
+export const query = graphql`
+  query GET_DATA {
+    allSite {
+      edges {
+        node {
+          siteMetadata {
+            description
+          }
+        }
+      }
+    }
+
+    allStripeSku {
+      edges {
+        node {
+          id
+          price
+          product {
+            name
+            metadata {
+              description
+              img
+              wear
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+const IndexPage = ({ data }) => {
+  const { description } = data.allSite.edges[0].node.siteMetadata
+  const { edges } = data.allStripeSku
+
+  return (
+    <>
+      <SEO title="Home" />
+      <Jumbo description={description} />
+      <ProductsPlatzi products={edges} />
+    </>
+  )
+}
 
 export default IndexPage
