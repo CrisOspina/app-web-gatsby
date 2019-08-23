@@ -4,7 +4,7 @@ import { SelectStars } from '../styles/components'
 export default function Stars() {
   const [stars, setStarts] = useState(5)
   return (
-    <SelectStars selectd={stars}>
+    <SelectStars selected={stars}>
       <span onClick={() => setStarts(1)}> ★ </span>
       <span onClick={() => setStarts(2)}> ★ </span>
       <span onClick={() => setStarts(3)}> ★ </span>
