@@ -1,5 +1,3 @@
-#### E-commerce: https://platzi-swag-crisospina523.netlify.com/
-
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
@@ -9,4 +7,5 @@
   Gatsby
 </h1>
 
+#### E-commerce created at the course: https://platzi-swag-crisospina523.netlify.com/
 
